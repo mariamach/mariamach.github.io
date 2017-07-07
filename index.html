@@ -1,1 +1,296 @@
-"Hello World" 
+<html>
+    <head>
+        <title>María Machado</title>
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    
+  <script>
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+  </script>
+
+
+    </head>
+
+    <body>
+
+<nav class="navbar navbar-toggleable-md navbar sticky-top navbar-inverse color" style="background-color: #E91E63;">
+       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+
+       </button>
+        <a class="navbar-brand" href="#">María Machado</a>
+        
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Programming</a>
+           </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Portfolio</a>
+            </li>
+          </ul>
+        </div>
+     </nav>
+
+<!-- HEADER -->
+
+
+  <div class="container-fluid bg-1 home-product text-center">
+   <br><br><br><br><br><br><br><br><br><br>
+   <h1>About me</h1>
+        <h2>I'm studying applied mathematics, i love movies and memes</h2>
+
+      
+
+
+        
+      
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <!-- SOY EL BANNER -->
+
+     <div class="container-fluid bg-2 text-center">
+       <h1>
+       <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, my name is María.", "i live in México City.", "i love graphic design.", "and i love maths." ]'>
+    <span class="wrap"></span>
+  </a>
+  </h1>
+
+        
+    </div>
+
+<!-- CONTAINERS -->
+  <div class="container-fluid bg-3 text-center">
+       <h1>I'm currently learning to program at DataCivica</h1>
+        <h2>¿What have i learned so far?.</h2>
+
+       
+
+        <div class="container">
+    <div class="row">
+        <!-- Boxes de Acoes -->
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <br>
+          <div class="image"><i class="fa fa-html5"></i></div>
+          <div class="info">
+           <br>
+            <h3 class="title">HTML</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+            <br>
+          <div class="image"><i class="fa fa-css3"></i></div>
+          <div class="info">
+           <br>
+            <h3 class="title">CSS</h3>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to the page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <br>
+          <div class="image"><i class="fa fa-github"></i></div>
+          <div class="info">
+            <br>
+            <h3 class="title">GIT/GITHUB</h3>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to the page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>        
+    <!-- /Boxes de Acoes -->
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Boxes de Acoes -->
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+           <br>
+          <div class="image"><i class="fa fa-code"></i></div>
+          <div class="info">
+            <br>
+            <h3 class="title">JQUERY</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to the page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <br>
+          <div class="image"><i class="fa fa-columns"></i></div>
+          <div class="info">
+            <br>
+            <h3 class="title">BOOTSTRAP</h3>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to the page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+        <br>
+          <div class="image"><i class="fa fa-terminal"></i></div>
+          <div class="info">
+          <br>
+            <h3 class="title">CLI</h3>
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.
+            </p>
+            <div class="more">
+              <a href="#" title="Title Link">
+                Go to the page <i class="fa fa-angle-double-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>        
+    <!-- /Boxes de Acoes -->
+  </div>
+</div>
+        
+    </div>
+
+<!-- FOOTER -->
+          <div class="container-fluid bg-7 text-center">
+       <h2>Portfolio</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semperLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semperLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lobortis nisl, vitae iaculis sapien. Phasellus ultrices gravida massa luctus ornare. Suspendisse blandit quam elit, eu imperdiet neque semper.</p>
+        
+    </div>
+                
+
+
+    </body>
+</html>
